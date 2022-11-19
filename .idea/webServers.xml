@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="bd04cc3e-8f7f-49c1-a140-2e1250c8c88b" name="cse476-project2" url="http://webdev.cse.msu.edu/~kroskema/cse476/project2">
+        <fileTransfer rootFolder="/user/kroskema/classweb/cse476/project2" accessType="SFTP" host="arctic.cse.msu.edu" port="22" sshConfigId="4e5ab4cc-b828-4bfe-b3da-a0e5098a1df0" sshConfig="kroskema@arctic.cse.msu.edu:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
