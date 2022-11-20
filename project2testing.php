@@ -25,14 +25,14 @@ $magic = "NechAtHa6RuzeR8x";
     <p>Userid: <input type="text" name="user" value="<?php echo $user;?>"/></p>
     <p>magic: <input type="text" name="magic" value="<?php echo $magic;?>"/></p>
     <p>Password: <input type="text" name="pw" value="<?php echo $password;?>"/></p>
-    <p><input type="submit" value="Test create" /></p>
+    <p><input type="submit" value="Test create game" /></p>
 </form>
 
 <form method="post" target="_blank" action="<?php echo $base_url; ?>chess-deletegame.php">
     <p>Userid: <input type="text" name="user" value="<?php echo $user;?>"/></p>
     <p>magic: <input type="text" name="magic" value="<?php echo $magic;?>"/></p>
     <p>Password: <input type="text" name="pw" value="<?php echo $password;?>"/></p>
-    <input type="submit" value="Test delete" />
+    <input type="submit" value="Test delete game" />
 </form>
 
 <form method="get" target="_blank" action="<?php echo $base_url; ?>chess-getgamestate.php">
@@ -40,6 +40,13 @@ $magic = "NechAtHa6RuzeR8x";
     <p>magic: <input type="text" name="magic" value="<?php echo $magic;?>"/></p>
     <p>Password: <input type="text" name="pw" value="<?php echo $password;?>"/></p>
     <input type="submit" value="Test getgamestate" />
+</form>
+
+<form method="post" target="_blank" action="<?php echo $base_url; ?>chess-createuser.php">
+    <p>Userid: <input type="text" name="user" value="<?php echo $user;?>"/></p>
+    <p>magic: <input type="text" name="magic" value="<?php echo $magic;?>"/></p>
+    <p>Password: <input type="text" name="pw" value="<?php echo $password;?>"/></p>
+    <p><input type="submit" value="Test create user" /></p>
 </form>
 
 </body>
