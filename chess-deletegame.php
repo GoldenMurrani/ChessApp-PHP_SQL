@@ -13,9 +13,9 @@ function process($user, $password, $magic) {
     // Connect to the database
     $pdo = pdo_connect();
     $userid = getUser($pdo, $user, $password);
-    $query = "delete from chessgames where player1id = $userid";
 
     //deletes all games, if more than one is somehow in the database
+    $query = "delete from chessgames where player1id = $userid";
     if($pdo->exec($query)){
         echo '<chess status="yes" msg="game deleted" />';
         exit;
@@ -30,7 +30,7 @@ function process($user, $password, $magic) {
  * @param $pdo
  * @param $user
  * @param $password
- * @return $id if successful or exits if not
+ * @return $id
  */
 function getUser($pdo, $user, $password) {
     // Does the user exist in the database?
@@ -45,7 +45,6 @@ function getUser($pdo, $user, $password) {
             echo '<chess status="no" msg="password error" />';
             exit;
         }
-
         return $row['id'];
     }
 

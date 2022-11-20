@@ -14,17 +14,9 @@ function process($user, $password, $magic) {
     $pdo = pdo_connect();
     $userid = getUser($pdo, $user, $password);
 
-    //check if the player is in a game already
-    $query1 = "select * from chessgames where player1id = $userid or player2id = $userid";
-
-    if($pdo->exec($query1)){
-        echo '<chess status="no" msg="user already has ongoing game" />';
-        exit;
-    }
-
-
-    $query2 = "insert into chessgames(player1id) values($userid)";
-    if($pdo->exec($query2)){
+    //check if the player is in a game already in the actual program
+    $query = "insert into chessgames(player1id) values($userid)";
+    if($pdo->exec($query)){
         echo '<chess status="yes" msg="game created" />';
         exit;
     }
@@ -53,7 +45,6 @@ function getUser($pdo, $user, $password) {
             echo '<chess status="no" msg="password error" />';
             exit;
         }
-
         return $row['id'];
     }
 

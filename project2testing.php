@@ -5,10 +5,8 @@ $title = "CSE476 proj2 Test Page";
 //  android application.
 //
 
-$user = "chessman";
-$password = "chesspass";
-//$user = "marshall";
-//$password = "marshallpass";
+$user = "test";
+$password = "test";
 
 $base_url = "https://webdev.cse.msu.edu/~kroskema/cse476/project2/"; // verify that this is the correct path to your web site
 $magic = "NechAtHa6RuzeR8x";
@@ -31,16 +29,16 @@ $magic = "NechAtHa6RuzeR8x";
 </form>
 
 <form method="post" target="_blank" action="<?php echo $base_url; ?>chess-deletegame.php">
-    <input type="hidden" name="magic" value="<?php echo $magic; ?>" />
-    <input type="hidden" name="user" value="<?php echo $user; ?>" />
-    <input type="hidden" name="pw" value="<?php echo $password; ?>" />
+    <p>Userid: <input type="text" name="user" value="<?php echo $user;?>"/></p>
+    <p>magic: <input type="text" name="magic" value="<?php echo $magic;?>"/></p>
+    <p>Password: <input type="text" name="pw" value="<?php echo $password;?>"/></p>
     <input type="submit" value="Test delete" />
 </form>
 
 <form method="get" target="_blank" action="<?php echo $base_url; ?>chess-getgamestate.php">
-    <input type="hidden" name="magic" value="<?php echo $magic; ?>" />
-    <input type="hidden" name="user" value="<?php echo $user; ?>" />
-    <input type="hidden" name="pw" value="<?php echo $password; ?>" />
+    <p>Userid: <input type="text" name="user" value="<?php echo $user;?>"/></p>
+    <p>magic: <input type="text" name="magic" value="<?php echo $magic;?>"/></p>
+    <p>Password: <input type="text" name="pw" value="<?php echo $password;?>"/></p>
     <input type="submit" value="Test getgamestate" />
 </form>
 
