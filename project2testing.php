@@ -4,8 +4,11 @@ $title = "CSE476 proj2 Test Page";
 //  The user and password below are those you used in your
 //  android application.
 //
-$user = "chessman";  // verify that your userid is correct
-$password = "chesspass"; // change this to use your application password
+
+$user = "chessman";
+$password = "chesspass";
+//$user = "marshall";
+//$password = "marshallpass";
 
 $base_url = "https://webdev.cse.msu.edu/~kroskema/cse476/project2/"; // verify that this is the correct path to your web site
 $magic = "NechAtHa6RuzeR8x";
@@ -32,6 +35,13 @@ $magic = "NechAtHa6RuzeR8x";
     <input type="hidden" name="user" value="<?php echo $user; ?>" />
     <input type="hidden" name="pw" value="<?php echo $password; ?>" />
     <input type="submit" value="Test delete" />
+</form>
+
+<form method="get" target="_blank" action="<?php echo $base_url; ?>chess-getgamestate.php">
+    <input type="hidden" name="magic" value="<?php echo $magic; ?>" />
+    <input type="hidden" name="user" value="<?php echo $user; ?>" />
+    <input type="hidden" name="pw" value="<?php echo $password; ?>" />
+    <input type="submit" value="Test getgamestate" />
 </form>
 
 </body>

@@ -2,16 +2,20 @@
 require_once "db.inc.php";
 echo '<?xml version="1.0" encoding="UTF-8" ?>';
 
+if(!isset($_POST['magic']) || $_POST['magic'] != "NechAtHa6RuzeR8x") {
+    echo '<hatter status="no" msg="magic" />';
+    exit;
+}
+
 process($_POST['user'], $_POST['pw'], $_POST['magic']);
 
 function process($user, $password, $magic) {
     // Connect to the database
     $pdo = pdo_connect();
     $userid = getUser($pdo, $user, $password);
-
     $query = "delete from chessgames where player1id = $userid";
 
-    //todo: test that player doesn't already have a game going
+    //deletes all games, if more than one is somehow in the database
     if($pdo->exec($query)){
         echo '<chess status="yes" msg="game deleted" />';
         exit;
