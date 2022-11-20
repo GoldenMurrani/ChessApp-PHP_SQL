@@ -19,7 +19,8 @@ function process($user, $password, $magic) {
     $rows = $pdo->query($query);
     if($row = $rows->fetch()){
         echo '<chess status="yes" msg="gamestate found" />';
-        return $row['gamestate'];
+        echo $row['gamestate'];
+        exit;
     }
     echo '<chess status="no" msg="gamestate not found" />';
 
