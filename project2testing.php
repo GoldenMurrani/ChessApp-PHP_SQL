@@ -49,5 +49,13 @@ $magic = "NechAtHa6RuzeR8x";
     <p><input type="submit" value="Test create user" /></p>
 </form>
 
+<form method="post" target="_blank" action="<?php echo $base_url; ?>chess-updategamestate.php">
+    <p>Userid: <input type="text" name="user" value="<?php echo $user;?>"/></p>
+    <p>magic: <input type="text" name="magic" value="<?php echo $magic;?>"/></p>
+    <p>Password: <input type="text" name="pw" value="<?php echo $password;?>"/></p>
+    <p>XML: <textarea name="xml"></textarea></p>
+    <p><input type="submit" value="Test update game" /></p>
+</form>
+
 </body>
 </html>
