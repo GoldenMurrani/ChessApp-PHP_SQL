@@ -16,7 +16,7 @@ function process($user, $password, $magic, $xml) {
 
     $xmlQ = $pdo->quote($xml);
     $query = "update chessgames set gamestate = $xmlQ where player1id = $userid or player2id = $userid";
-    echo $query;
+
     if($pdo->exec($query)){
         echo '<chess status="yes" msg="game updated" />';
         exit;
