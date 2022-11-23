@@ -15,11 +15,10 @@ function process($user, $password, $magic) {
     $userid = getUser($pdo, $user, $password);
 
     //get gamestate
-    $query = "select gamestate from chessgames where player1id = $userid or player2id = $userid";
+    $query = "select gamestate, turn from chessgames where player1id = $userid or player2id = $userid";
     $rows = $pdo->query($query);
     if($row = $rows->fetch()){
-        echo '<chess status="yes" msg="gamestate found" />';
-        echo $row['gamestate'];
+        echo "<chess status='yes' msg='game found' gamestate = '{$row['gamestate']}' turn = '{$row['turn']}' />";
         exit;
     }
     echo '<chess status="no" msg="gamestate not found" />';
