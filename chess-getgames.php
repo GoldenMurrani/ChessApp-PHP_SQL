@@ -15,7 +15,7 @@ function process($user, $password, $magic) {
     $userid = getUser($pdo, $user, $password);
 
     //get gamestate
-    $query = "select player1id from chessgames where player2id is null";
+    $query = "select id, player1id from chessgames where player2id is null";
     $rows = $pdo->query($query);
 
     echo "<chess status=\"yes\">";
@@ -24,7 +24,7 @@ function process($user, $password, $magic) {
         $id = $row['id'];
         $player1id = $row['name'];
 
-        echo "<chess id=\"$id\" player1id=\"$player1id\" />\r\n";
+        echo "<chessgames id=\"$id\" player1id=\"$player1id\" />\r\n";
 //        echo $row['player1id'];
     }
     echo "</chess>";
