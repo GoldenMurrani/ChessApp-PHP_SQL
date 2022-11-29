@@ -17,11 +17,17 @@ function process($user, $password, $magic) {
     //get gamestate
     $query = "select player1id from chessgames where player2id is null";
     $rows = $pdo->query($query);
+
+    echo "<hatter status=\"yes\">";
     foreach($rows as $row){
-        echo "<chess status='yes' msg='games found' gameid = '{$row['player1id']}'/>";
+
+        $id = $row['id'];
+        $player1id = $row['name'];
+
+        echo "<chess id=\"$id\" player1id=\"$player1id\" />\r\n";
 //        echo $row['player1id'];
     }
-    echo '<chess status="no" msg="no games found" />';
+    echo "</chess>";
 
 }
 
