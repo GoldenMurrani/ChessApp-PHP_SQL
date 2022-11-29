@@ -14,13 +14,15 @@ function process($user, $password, $magic) {
     $pdo = pdo_connect();
     $userid = getUser($pdo, $user, $password);
 
-    $null = null;
+//    $null = null;
 
     //get gamestate
-    $query = "select id, player1id from chessgames where player2id='$null'";
+    $query = "select id, player1id from chessgames where player2id IS NULL";
+    echo $query;
     $rows = $pdo->query($query);
 
     echo "<chess status=\"yes\">";
+
     foreach($rows as $row){
 
         $id = $row['id'];
