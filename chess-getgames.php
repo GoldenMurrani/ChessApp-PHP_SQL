@@ -18,7 +18,6 @@ function process($user, $password, $magic) {
 
     //get gamestate
     $query = "select id, player1id from chessgames where player2id IS NULL";
-    echo $query;
     $rows = $pdo->query($query);
 
     echo "<chess status=\"yes\">";
