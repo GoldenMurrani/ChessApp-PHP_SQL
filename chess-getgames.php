@@ -17,7 +17,8 @@ function process($user, $password, $magic) {
 //    $null = null;
 
     //get gamestate
-    $query = "select id, player1id from chessgames where player2id IS NULL";
+//    $query = "select id, player1id from chessgames where player2id IS NULL";
+    $query = "select chessgames.id, chessuser.user from chessgames, chessuser where player2id IS NULL and player1id=chessuser.id";
     $rows = $pdo->query($query);
 
     echo "<chess status=\"yes\">";
@@ -25,10 +26,10 @@ function process($user, $password, $magic) {
     foreach($rows as $row){
 
         $id = $row['id'];
-        $player1id = $row['player1id'];
+        $user1 = $row['user'];
         //$player1id = $row['name'];
 
-        echo "<chessgames id=\"$id\" player1id=\"$player1id\" />\r\n";
+        echo "<chessgames id=\"$id\" user1=\"$user1\" />\r\n";
 //        echo $row['player1id'];
     }
     echo "</chess>";
