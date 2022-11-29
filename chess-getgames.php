@@ -22,7 +22,8 @@ function process($user, $password, $magic) {
     foreach($rows as $row){
 
         $id = $row['id'];
-        $player1id = $row['name'];
+        $player1id = $row['player1id'];
+        //$player1id = $row['name'];
 
         echo "<chessgames id=\"$id\" player1id=\"$player1id\" />\r\n";
 //        echo $row['player1id'];
