@@ -18,7 +18,7 @@ function process($user, $password, $magic) {
     $query = "select player1id from chessgames where player2id is null";
     $rows = $pdo->query($query);
 
-    echo "<hatter status=\"yes\">";
+    echo "<chess status=\"yes\">";
     foreach($rows as $row){
 
         $id = $row['id'];
