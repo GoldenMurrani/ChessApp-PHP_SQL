@@ -13,8 +13,8 @@ function process($gameID, $pieceID, $x, $y, $turn) {
     // Connect to the database
     $pdo = pdo_connect();
 
-    $userQ = $pdo->quote($user);
-    $passwordQ = $pdo->quote($password);
+//    $userQ = $pdo->quote($user);
+//    $passwordQ = $pdo->quote($password);
     $query = "UPDATE chessgames SET piece=$pieceID, x=$x, y=&y, turn=$turn WHERE id=$gameID";
     if($pdo->exec($query)){
         echo '<chess status="yes" msg="piece moved" />';

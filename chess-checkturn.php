@@ -12,7 +12,7 @@ process($_GET['game']);
 function process($gameID) {
     // Connect to the database
     $pdo = pdo_connect();
-    $userid = getUser($pdo, $user, $password);
+//    $userid = getUser($pdo, $user, $password);
 
     //get gamestate
     $query = "SELECT * FROM chessgames WHERE id=$gameID";
