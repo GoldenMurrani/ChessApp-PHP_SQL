@@ -17,8 +17,14 @@ function process($user, $password, $magic) {
     //check if the player is in a game already in the actual program
     $query = "insert into chessgames(player1id) values($userid)";
     if($pdo->exec($query)){
-        echo '<chess status="yes" msg="game created" />';
-        exit;
+        $query = "SELECT id FROM chessgames WHERE player1id=$userid";
+        $rows = $pdo->query($query);
+        if($row = $rows->fetch()){
+            echo "<chess status=\"yes\" msg=\"game created\" game='{$row['id']}' />";
+            exit;
+        }
+    }
+
     }
     echo '<chess status="no" msg="game create failed" />';
 
