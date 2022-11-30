@@ -3,7 +3,7 @@ require_once "db.inc.php";
 echo '<?xml version="1.0" encoding="UTF-8" ?>';
 
 if(!isset($_POST['magic']) || $_POST['magic'] != "NechAtHa6RuzeR8x") {
-    echo '<hatter status="no" msg="magic" />';
+    echo '<chess status="no" msg="magic" />';
     exit;
 }
 
@@ -16,12 +16,12 @@ function process($gameID, $user) {
     $query = "SELECT id FROM chessuser WHERE user=$user";
     $rows = $pdo->query($query);
     if($row = $rows->fetch()) {
-        $query = "UPDATE chessgames SET player2id='{$row['id']}' WHERE id=$gameID";
+        $player2ID = $row['id'];
+        $query = "UPDATE chessgames SET player2id=$player2ID WHERE id=$gameID";
         if($pdo->exec($query)){
             echo '<chess status="yes" msg="joined game" />';
-        exit;
+            exit;
         }
-        
     }
     echo '<chess status="no" msg="join game failed" />';
 
