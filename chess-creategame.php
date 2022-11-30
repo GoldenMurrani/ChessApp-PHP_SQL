@@ -25,7 +25,7 @@ function process($user, $password, $magic) {
         }
     }
 
-    }
+
     echo '<chess status="no" msg="game create failed" />';
 
 }
