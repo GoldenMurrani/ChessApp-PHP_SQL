@@ -7,6 +7,7 @@ $title = "CSE476 proj2 Test Page";
 
 $user = "test";
 $password = "test";
+$game = "test";
 
 $base_url = "https://webdev.cse.msu.edu/~kroskema/cse476/project2/"; // verify that this is the correct path to your web site
 $magic = "NechAtHa6RuzeR8x";
@@ -29,9 +30,8 @@ $magic = "NechAtHa6RuzeR8x";
 </form>
 
 <form method="post" target="_blank" action="<?php echo $base_url; ?>chess-deletegame.php">
-    <p>Userid: <input type="text" name="user" value="<?php echo $user;?>"/></p>
+    <p>GAME: <input type="text" name="game" value="<?php echo $game;?>"/></p>
     <p>magic: <input type="text" name="magic" value="<?php echo $magic;?>"/></p>
-    <p>Password: <input type="text" name="pw" value="<?php echo $password;?>"/></p>
     <input type="submit" value="Test delete game" />
 </form>
 

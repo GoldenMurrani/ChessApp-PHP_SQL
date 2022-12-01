@@ -14,7 +14,7 @@ function process($gameID, $magic) {
     $pdo = pdo_connect();
 
     //deletes the game by ID specifies
-    $query = "DELETE FROM chessgames WHERE  id=$gameID";
+    $query = "DELETE FROM chessgames WHERE id=$gameID";
     if($pdo->exec($query)){
         echo '<chess status="yes" msg="game deleted" />';
         exit;
